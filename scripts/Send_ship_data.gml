@@ -1,0 +1,10 @@
+var scr_ship = argument0;
+buffer_seek(Buffer , buffer_seek_start , 0 );
+buffer_write(Buffer, buffer_u8, NET_BASE_DATA);
+buffer_write(Buffer, buffer_s32, scr_ship.pl_id);
+buffer_write(Buffer, buffer_string, scr_ship.name);
+buffer_write(Buffer, buffer_f32, scr_ship.image_angle);
+buffer_write(Buffer, buffer_f32, scr_ship.x);
+buffer_write(Buffer, buffer_f32, scr_ship.y);
+buffer_write(Buffer, buffer_u16, scr_ship.shell_signature);
+Send_to_all();
